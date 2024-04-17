@@ -1,0 +1,152 @@
+
+// index.scss
+
+// Global styles
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Catchy styles for the app
+.app {
+  height: 100vh;
+  padding: 0 20px; // Decreased padding for a sleeker look
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: linear-gradient(135deg, #ff5f6d, #ffc371); // Background gradient
+  overflow: hidden; // Hide overflowing content
+
+  // Fancy lines
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3); // Semi-transparent line
+    z-index: 1; // Ensure lines appear behind content
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.3); // Semi-transparent line
+    z-index: 1; // Ensure lines appear behind content
+  }
+
+  h1 {
+    margin-bottom: 30px; // Reduced margin for tighter spacing
+    font-size: 3rem; // Larger font size for headings
+    color: #732d2d; // White text color for contrast
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); // Text shadow for depth
+  }
+
+  .books {
+    display: flex;
+    flex-wrap: wrap; // Allow books to wrap to the next line
+    justify-content: center;
+
+    .book {
+      flex: 0 0 calc(33.333% - 20px); // Adjusted width for better spacing
+      margin: 10px; // Added margin between books
+      padding: 20px; // Increased padding for each book item
+      background-color: #fff; // White background for each book item
+      border-radius: 8px; // Rounded corners for each book item
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle box shadow for depth
+      transition: transform 0.3s, box-shadow 0.3s; // Smooth transition for hover effects
+
+      &:hover {
+        transform: translateY(-5px); // Lift the book item on hover
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Increase box shadow on hover
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px; // Rounded corners for book images
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Box shadow for depth
+      }
+
+      h2 {
+        font-size: 1.5rem; // Larger font size for book titles
+        margin-bottom: 10px; // Reduced margin for tighter spacing
+      }
+
+      p {
+        color: #666; // Slightly darker text color for description
+      }
+
+      span {
+        font-weight: bold;
+        color: #007bff; // Bold and catchy color for price
+        margin-bottom: 7px;
+      }
+
+      button {
+        margin-top: 10px; // Added margin above buttons
+        padding: 8px 16px; // Increased padding for buttons
+        border: none;
+        background-color: #007bff; // Bold and catchy color for buttons
+        color: #fff;
+        border-radius: 4px; // Rounded corners for buttons
+        cursor: pointer;
+        transition: background-color 0.3s; // Smooth transition for button hover
+
+        &:hover {
+          background-color: #0056b3; // Darker shade on hover for contrast
+        }
+      }
+    }
+  }
+
+  .form {
+    max-width: 400px; // Limited width for the form
+    margin-top: 20px; // Added margin on top of the form
+    padding: 20px; // Increased padding for the form
+    background-color: #fff; // White background for the form
+    border-radius: 8px; // Rounded corners for the form
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Box shadow for depth
+    transition: box-shadow 0.3s; // Smooth transition for box shadow
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px; // Increased margin between form fields
+      border: 1px solid #ccc; // Light gray border for form fields
+      border-radius: 4px; // Rounded corners for form fields
+      transition: border-color 0.3s; // Smooth transition for field focus
+
+      &:focus {
+        border-color: #007bff; // Highlight border color on focus
+        outline: none; // Remove default focus outline
+      }
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px; // Increased padding for button
+      background-color: #007bff; // Bold and catchy color for button
+      color: #fff;
+      border-radius: 4px; // Rounded corners for button
+      cursor: pointer;
+      transition: background-color 0.3s; // Smooth transition for button hover
+
+      &:hover {
+        background-color: #0056b3; // Darker shade on hover for contrast
+      }
+    }
+  }
+}
